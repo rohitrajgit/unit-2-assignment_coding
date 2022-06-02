@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    
+    <title>masai Calculator</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #main{
+            width: 30%;
+            height: 500px;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .rs{
+            width: 80%;
+            height: 50px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cont{
+            width: 80%;
+            height: 300px;
+            margin: auto;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,60px);
+            gap: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          
+            
+        }
+        .cont>div{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 10px;
+        }
+        .black{
+            background-color: black;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="main">
+        <div class="rs"></div>
+        <div class="cont">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">.</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div class="red">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+   let key= document.querySelectorAll(".cont>div")
+    var bag="";
+   for(var i=0;i<key.length;i++)
+   {
+       key[i].addEventListener("click",mycal)
+   }
+   function mycal(event){
+       var targetnum=event.target.innerText
+       if(targetnum=="C")
+       {
+           bag="";
+        document.querySelector(".rs").innerText=""
+       }
+       else if(targetnum=="="){
+         
+        document.querySelector(".rs").innerText=eval(bag)
+       }
+       else{
+        bag=bag+targetnum;
+       document.querySelector(".rs").innerText=bag
+       }
+    }
+</script>

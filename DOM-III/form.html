@@ -1,0 +1,39 @@
+<!DOCTYPE html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM FORM</title>
+</head>
+<body>
+    <form>
+        <input id="name" type="text" placeholder="Enter name"/>
+        <input id="num" type="number" placeholder="Enter no.">
+        <select  id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="another">Another</option>
+        </select>    
+        <input id="email" type="text" placeholder="Email">     
+        <input id="number" type="text" placeholder="Number">     
+        <input type="submit">
+    </form> 
+</body>
+</html>
+<script>
+ let frm=document.querySelector("form")
+ frm.addEventListener("submit",myfunction)
+ function myfunction(){
+    event.preventDefault();
+    let nam=document.querySelector("#name").value;
+    let number=document.querySelector("#num").value;
+    let sel=document.querySelector("#gender").value;
+    let eml=document.querySelector("#email").value;
+    let no=document.querySelector("#number").value;
+    console.log(nam,number,sel,eml,no);
+  
+    
+   
+
+ }
+</script>

@@ -31,7 +31,7 @@
 </html>
 <script>
     document.querySelector("form").addEventListener("submit",myfunction)
-    let arrobj=[]
+    let arrobj=JSON.parse(localStorage.getItem("data"))|| []
     function myfunction(){
         event.preventDefault()
       let obj={
@@ -43,5 +43,6 @@
       }
       arrobj.push(obj);
       console.log(arrobj);
+      localStorage.setItem("data",JSON.stringify(arrobj));
     }
 </script>
